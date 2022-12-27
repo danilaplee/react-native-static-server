@@ -13,7 +13,9 @@ Pod::Spec.new do |s|
   s.source         = { :git => 'https://github.com/futurepress/react-native-static-server.git' }
 
   s.requires_arc   = true
-  s.platform       = :ios, '7.0'
+  s.ios.deployment_target = '8.0'
+  s.tvos.deployment_target = '9.0'
+  s.osx.deployment_target = '10.7'
 
   s.preserve_paths = 'README.md', 'package.json', 'index.js'
   s.source_files   = 'ios/*.{h,m}'
