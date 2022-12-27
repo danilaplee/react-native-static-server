@@ -139,8 +139,10 @@ RCT_EXPORT_METHOD(start: (NSString *)port
         [options setObject:@(YES) forKey:GCDWebServerOption_BindToLocalhost];
     }
 
-    if (self.keep_alive == YES) {
+    if (self.keep_alive == YES) {      
+#if __has_include(<UIKit/UIKit.h>)
         [options setObject:@(NO) forKey:GCDWebServerOption_AutomaticallySuspendInBackground];
+#endif
         [options setObject:@2.0 forKey:GCDWebServerOption_ConnectedStateCoalescingInterval];
     }
 
